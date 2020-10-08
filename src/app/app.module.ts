@@ -52,6 +52,7 @@ import { NoteUpdateDialogComponent } from './note-update-dialog/note-update-dial
     ReactiveFormsModule,
   ],
   providers: [],
+  entryComponents: [NoteUpdateDialogComponent],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
