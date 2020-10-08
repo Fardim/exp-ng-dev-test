@@ -4,14 +4,12 @@ import * as noteActions from './../state/note.action';
 import { Note } from './../_models/Note';
 import * as fromNote from './../state';
 import { NoteState } from './../state/note.reducer';
-import { NoteService } from './../_services/note.service';
 import { Component, OnInit } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
 import { animate, style, transition, trigger } from '@angular/animations';
 import { MatDialog } from '@angular/material/dialog';
-import { MatBottomSheet } from '@angular/material/bottom-sheet';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
@@ -40,7 +38,6 @@ export class ShowAllComponent implements OnInit {
   constructor(
     private store: Store<NoteState>,
     private dialog: MatDialog,
-    private _bottomSheet: MatBottomSheet,
     private snackBar: MatSnackBar
   ) {}
 
