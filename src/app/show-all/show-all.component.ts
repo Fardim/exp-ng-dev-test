@@ -1,3 +1,4 @@
+import { UndoBottomSheetComponent } from './../undo-bottom-sheet/undo-bottom-sheet.component';
 import { NoteUpdateDialogComponent } from './../note-update-dialog/note-update-dialog.component';
 import * as noteActions from './../state/note.action';
 import { Note } from './../_models/Note';
@@ -10,6 +11,8 @@ import { takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
 import { animate, style, transition, trigger } from '@angular/animations';
 import { MatDialog } from '@angular/material/dialog';
+import { MatBottomSheet } from '@angular/material/bottom-sheet';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-show-all',
@@ -34,7 +37,12 @@ export class ShowAllComponent implements OnInit {
   enableColorPallete: boolean = false;
   private unsubscribeAll$: Subject<boolean> = new Subject<boolean>();
 
-  constructor(private store: Store<NoteState>, private dialog: MatDialog) {}
+  constructor(
+    private store: Store<NoteState>,
+    private dialog: MatDialog,
+    private _bottomSheet: MatBottomSheet,
+    private snackBar: MatSnackBar
+  ) {}
 
   ngOnInit(): void {
     this.store
@@ -57,6 +65,11 @@ export class ShowAllComponent implements OnInit {
       };
       this.store.dispatch(new noteActions.AddNote(obj));
       this.note = '';
+      this.snackBar.openFromComponent(UndoBottomSheetComponent, {
+        duration: 4000,
+        horizontalPosition: 'center',
+        verticalPosition: 'bottom',
+      });
     }
   }
   updateNote(note) {

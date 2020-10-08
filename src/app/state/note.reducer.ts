@@ -2,11 +2,13 @@ import { NoteActions, NoteActionTypes } from './note.action';
 import { Note } from './../_models/Note';
 
 export interface NoteState {
+  lastAddedNote: Note;
   notes: Note[];
   error: string;
 }
 
 const initialState: NoteState = {
+  lastAddedNote: null,
   notes: [],
   error: '',
 };
@@ -30,6 +32,7 @@ export function reducer(state = initialState, action: NoteActions): NoteState {
       return {
         ...state,
         notes: addedProducts,
+        lastAddedNote: action.payload,
         error: '',
       };
     case NoteActionTypes.AddNoteFail:

@@ -8,6 +8,7 @@ export enum NoteActionTypes {
   AddNote = '[Note] Add Note',
   AddNoteSuccess = '[Note] Add Note Success',
   AddNoteFail = '[Note] Add Note Fail',
+  LastAddedNote = '[Note] Last Added Note',
   UpdateNote = '[Note] Update Note',
   UpdateNoteSuccess = '[Note] Update Note Success',
   UpdateNoteFail = '[Note] Update Note Fail',

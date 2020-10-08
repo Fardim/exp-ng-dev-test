@@ -22,6 +22,7 @@ import { HorizontalColorPalleteComponent } from './horizontal-color-pallete/hori
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { reducer } from './state/note.reducer';
 import { NoteUpdateDialogComponent } from './note-update-dialog/note-update-dialog.component';
+import { UndoBottomSheetComponent } from './undo-bottom-sheet/undo-bottom-sheet.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { NoteUpdateDialogComponent } from './note-update-dialog/note-update-dial
     NotFoundComponent,
     HorizontalColorPalleteComponent,
     NoteUpdateDialogComponent,
+    UndoBottomSheetComponent,
   ],
   imports: [
     BrowserModule,
@@ -52,7 +54,7 @@ import { NoteUpdateDialogComponent } from './note-update-dialog/note-update-dial
     ReactiveFormsModule,
   ],
   providers: [],
-  entryComponents: [NoteUpdateDialogComponent],
+  entryComponents: [NoteUpdateDialogComponent, UndoBottomSheetComponent],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

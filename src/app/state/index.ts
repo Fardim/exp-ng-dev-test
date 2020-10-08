@@ -15,3 +15,7 @@ export const getNotes = createSelector(getNoteFeatureState, (state) => {
 export const getError = createSelector(getNoteFeatureState, (state) => {
   return state.error;
 });
+
+export const getLastAddedNote = createSelector(getNoteFeatureState, (state) => {
+  return state.lastAddedNote;
+});

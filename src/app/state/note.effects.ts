@@ -38,7 +38,7 @@ export class NoteEffects {
   );
 
   @Effect()
-  addProduct$ = this.actions$.pipe(
+  addNote$ = this.actions$.pipe(
     ofType(fromNoteActions.NoteActionTypes.AddNote),
     map((action: fromNoteActions.AddNote) => action.payload),
     mergeMap((note: Note) =>
@@ -50,7 +50,7 @@ export class NoteEffects {
   );
 
   @Effect()
-  deleteProduct$ = this.actions$.pipe(
+  deleteNote$ = this.actions$.pipe(
     ofType(fromNoteActions.NoteActionTypes.DeleteNote),
     map((action: fromNoteActions.DeleteNote) => action.payload),
     mergeMap((id: number) =>

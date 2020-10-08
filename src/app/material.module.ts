@@ -1,4 +1,7 @@
-import { HAMMER_GESTURE_CONFIG, HammerGestureConfig } from '@angular/platform-browser';
+import {
+  HAMMER_GESTURE_CONFIG,
+  HammerGestureConfig,
+} from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { MatMenuModule } from '@angular/material/menu';
@@ -35,6 +38,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
 
 @NgModule({
   imports: [
@@ -71,6 +75,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
     MatTabsModule,
     MatToolbarModule,
     MatTooltipModule,
+    MatBottomSheetModule,
   ],
   exports: [
     MatAutocompleteModule,
@@ -106,6 +111,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
     MatTabsModule,
     MatToolbarModule,
     MatTooltipModule,
+    MatBottomSheetModule,
   ],
   providers: [
     { provide: MAT_DATE_LOCALE, useValue: 'en-GB' },
