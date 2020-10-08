@@ -62,7 +62,6 @@ export class ShowAllComponent implements OnInit {
   updateNote(note) {
     const dialogRef = this.dialog.open(NoteUpdateDialogComponent, {
       width: '30vw',
-      disableClose: true,
       data: {
         note: note,
       },
