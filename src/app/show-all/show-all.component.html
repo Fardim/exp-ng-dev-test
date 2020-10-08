@@ -1,0 +1,39 @@
+<mat-form-field class="example-full-width" style="width: 100%">
+  <mat-label>Take a note</mat-label>
+  <input
+    matInput
+    placeholder="Take a note"
+    [(ngModel)]="note"
+    [ngModelOptions]="{ standalone: true }"
+    (focus)="enableColorPallete = true"
+  />
+</mat-form-field>
+
+<app-horizontal-color-pallete
+  *ngIf="enableColorPallete"
+  (OutSelectedColor)="selectedColor($event)"
+></app-horizontal-color-pallete>
+
+<mat-divider [inset]="true" style="margin: 16px 0px"></mat-divider>
+
+<div fxLayout="row wrap" fxLayoutAlign="start start" fxLayoutGap="16px">
+  <div
+    fxFlex="16.6"
+    [ngStyle]="{
+      'background-color': note.color,
+      cursor: 'pointer',
+      'font-size': '16px',
+      'margin-bottom': '16px'
+    }"
+    *ngFor="let note of notes"
+    fxLayout="column"
+    class="mat-elevation-z2"
+    (click)="updateNote(note)"
+    style="margin-bottom: 16px !important"
+  >
+    <div style="padding: 12px; font-weight: bold">{{ note.title }}</div>
+    <div style="padding-top: 16px" fxLayoutAlign="end end">
+      {{ note.createDate | date }}
+    </div>
+  </div>
+</div>

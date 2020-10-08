@@ -1,0 +1,13 @@
+<div fxLayout="row" fxLayoutAlign="start center" [@enterLeftRightAnimation]>
+  <div
+    fxFlex="16.6"
+    *ngFor="let pallete of colors"
+    [ngStyle]="{
+      'background-color': pallete.backgroundColor,
+      height: '40px',
+      cursor: 'pointer'
+    }"
+    (click)="selectedColor(pallete.backgroundColor)"
+    class="mat-elevation-z2"
+  ></div>
+</div>

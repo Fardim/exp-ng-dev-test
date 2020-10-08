@@ -1,0 +1,25 @@
+<div fxLayout="column" fxLayoutAlign="start stretch">
+  <div fxFlex="100" fxLayout="row" fxLayoutAlign="end center">
+    <mat-icon
+      fxFlexAlign="end"
+      style="color: red; cursor: pointer"
+      (click)="deleteNote()"
+      >delete</mat-icon
+    >
+  </div>
+  <mat-form-field class="example-full-width" style="width: 100%" fxFlex="100">
+    <mat-label>Take a note</mat-label>
+    <input
+      matInput
+      placeholder="Take a note"
+      [(ngModel)]="note"
+      [ngModelOptions]="{ standalone: true }"
+    />
+  </mat-form-field>
+
+  <app-horizontal-color-pallete
+    style="width: 100%"
+    fxFlex="100"
+    (OutSelectedColor)="selectedColor($event)"
+  ></app-horizontal-color-pallete>
+</div>

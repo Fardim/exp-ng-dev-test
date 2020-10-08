@@ -1,0 +1,32 @@
+<mat-toolbar>
+  <mat-toolbar-row>
+    <button mat-icon-button>
+      <mat-icon (click)="sidenav.toggle()">menu</mat-icon>
+    </button>
+    <h1>NOTES</h1>
+    <span class="menu-spacer"></span>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav #sidenav>
+    <mat-nav-list>
+      <a
+        mat-list-item
+        *ngFor="let nav of navigations"
+        [ngStyle]="{
+          'background-color': nav.backgroundColor,
+          color: nav.color,
+          width: '250px'
+        }"
+        (click)="sidenav.toggle(); colorSelected(nav.backgroundColor)"
+        >{{ nav?.title }}</a
+      >
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div style="height: 86.3vh; padding: 32px 64px">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
