@@ -16,14 +16,15 @@
 
 <mat-divider [inset]="true" style="margin: 16px 0px"></mat-divider>
 
-<div fxLayout="row wrap" fxLayoutAlign="start start" fxLayoutGap="16px">
+<div fxLayout="row wrap" fxLayoutAlign="start start">
   <div
     fxFlex="16.6"
     [ngStyle]="{
       'background-color': note.color,
       cursor: 'pointer',
       'font-size': '16px',
-      'margin-bottom': '16px'
+      'margin-bottom': '16px',
+      'margin-right': '16px'
     }"
     *ngFor="let note of notes"
     fxLayout="column"
